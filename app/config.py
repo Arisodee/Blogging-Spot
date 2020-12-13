@@ -2,9 +2,8 @@ class Config:
     '''
     General configuration parent class
     '''
-    pass
-
-
+    SECRET_KEY = '49740a2c2a37bf0e2b89f7'
+   
 
 class ProdConfig(Config):
     '''
