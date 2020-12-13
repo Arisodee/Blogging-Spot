@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title>Blogging Spot - {{title}}</title>
+    {% else %}
+    <title>Blogging spot</title>
+    {% endif %}
+    <link rel="stylesheet" href="#">
+</head>
+
+<body>
+    {% block content %}{% endblock %}
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
