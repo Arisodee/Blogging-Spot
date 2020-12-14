@@ -3,7 +3,7 @@ class Config:
     General configuration parent class
     '''
     SECRET_KEY = '49740a2c2a37bf0e2b89f7'
-   
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://ariso:Barbie1991@localhost/watchlist'
 
 class ProdConfig(Config):
     '''
