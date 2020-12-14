@@ -1,5 +1,8 @@
-from flask import render_template
+from flask import render_template,url_for, flash,redirect
 from app import app
+from .forms import RegistrationForm, LoginForm
+
+app.config['SECRET_KEY'] = '49740a2c2a37bf0e2b89f7'
 
 posts = [
     {
@@ -34,3 +37,24 @@ def about():
     View root page function that returns the about page and its data
     '''
     return render_template('about.html', title='About')
+
+@app.route('/register',methods = ['GET', 'POST'])
+def register():
+
+    '''
+    View root page function that returns the about page and its data
+    '''
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Account created for{fom.username.data}', 'success')
+        return redirect(url_for('home'))
+    return render_template('register.html', title='Register', form=form)
+
+@app.route('/login')
+def login():
+
+    '''
+    View root page function that returns the about page and its data
+    '''
+    form = LoginForm()
+    return render_template('login.html', title='Login', form=form)
