@@ -1,4 +1,4 @@
-# BLOGS
+# BLOGGING-SPOT
 
 ## Author
  Ariso Okanga
@@ -20,12 +20,13 @@ This is a blogging website that allows users to create blog posts as well as rea
 
 As a user you can:
 
-* view the most recent posts.
-* View and comment the blog posts on the site.
-* Receive an email alert after subscribing.
+* view the most recent posts
+* View and comment the blog posts on the site
+* Receive an email alert after subscribing
 * Sign up and log in to access various features
 * View random quotes on the site
-* Create a blog,update it or delete blogs created.
+* Create a blog,update it or delete blogs created
+* Delete insulting or degrading comments
 
 
 ## Development Installation
