@@ -1,8 +1,31 @@
 {% extends 'base.html' %}
-{% block content %}
-    {% for post in posts %}
-    <h1>{{ post.title }}</h1>
-    <p>By {{ post.author }} on {{ post.date_posted }}</p>
-    <p>{{ post.content }}</p>
-    {% endfor %}
+{%block content%}
+
+<div class="home">
+    <div class="container">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div>
+                <h2 style="font-size: 80px; font-family: 'Lobster', cursive;  padding-top: 40px; text-align: center;">
+                    Welcome to Blogging-spot</h2>
+                    <br><br>
+
+                <p style="font-size: 20px;">{{blogQuote.quote}}</p>
+                
+                <p class="text-right"><b>~ {{blogQuote.author}} ~</b> </p>
+
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+<style>
+    body{
+        background-image:url('https://images.unsplash.com/photo-1501618669935-18b6ecb13d6d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=732&q=80');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
 {% endblock %}
+
+
