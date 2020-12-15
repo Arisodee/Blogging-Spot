@@ -83,7 +83,6 @@ def theblog():
     return render_template('myblogs.html', blogs=blogs)
 
 
-
 @main.route('/Update/<int:id>', methods=['GET', 'POST'])
 @login_required
 def update_blog(id):
@@ -101,7 +100,6 @@ def update_blog(id):
         form.title_blog.data = blog.title_blog
         form.description.data = blog.description
     return render_template('update_blog.html', form=form)
-
 
 @main.route('/view/<int:id>', methods=['GET', 'POST'])
 @login_required
@@ -136,5 +134,3 @@ def delete_comment(comment_id):
     db.session.commit()
     flash('comment succesfully deleted')
     return redirect (url_for('main.theblog'))
- 
-   
