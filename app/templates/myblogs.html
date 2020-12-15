@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+<div class="container">
+    <div class="row">
+        <div class=" col-md-2"></div>
+
+        <div class=" col-md-8">
+
+            {%for blog in blogs%}
+            <div class=" text-center" style="box-shadow: 0 4px 8px 0 rgba(15, 14, 14, 0.87);">
+                <div class=" text-info">
+                    <h3>{{blog.title_blog}}</h3>
+                </div>
+                <hr>
+                <div class="">
+                    <p>{{blog.description}}</p>
+                    <p class="text-right text-muted"> <b>~ {{blog.user.username}} </b></p>
+                </div>
+                <div class="">
+                    <p class="date text-muted">Date posted: {{blog.date.strftime('%Y-%m-%d')}}</p>
+                    <a href="{{url_for('main.view', id=blog.id)}}" style="margin-right: 3%;"><button
+                            class="btn btn-success">COMMENT</button> </a>
+                    {% if blog.user == current_user%}
+                    <a href="{{url_for('main.delete', id=blog.id)}}" style="margin-right: 3%;"><button
+                            class="btn btn-primary">DELETE</button></a>
+                    <a href="{{url_for('main.update_blog', id=blog.id)}}" style="margin-right: 3%;"><button
+                            class="btn btn-info">UPDATE</button></a>
+                    {% endif %}
+                </div>
+                <br>
+            </div>
+            {%endfor%}
+
+            <div class=" col-md-2"></div>
+
+
+
+        </div>
+    </div>
+
+    {%endblock%}

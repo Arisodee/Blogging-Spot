@@ -1,0 +1,40 @@
+<nav class="navbar navbar-dark bg-dark">
+    <ul class="nav navbar-nav navbar-right ">
+        <li> <a class="nav-item nav-link" href="{{ url_for('main.index') }}">HOME</a> </li>
+        
+         <li class="nav-item">
+                    <a href="{{url_for('main.theblog')}}" class="nav-link"><span style="font-family: cursive;">BLOGS</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url_for('main.blogs')}}" class="nav-link"><span style="font-family: cursive;">CREATE A BLOG</span></a>
+                </li>
+
+        {% if current_user.is_authenticated %}
+
+
+       
+        <li>
+            <a href="{{url_for( 'main.profile',uname=current_user.username)}} " style="text-decoration: none; ">
+                PROFILE</a>
+        </li>
+        <li>
+            <a href="{{url_for( 'auth.logout')}} " style="text-decoration: none; ">SIGN OUT</a>
+        </li>
+
+        </li>
+        {% else %}
+
+        <li>
+            <a href="{{url_for( 'auth.login')}} " style="text-decoration: none; ">LOGIN</a>
+        </li>
+
+    </ul>
+    {%endif%}
+</nav>
+<style>
+    nav{
+        background-color: rgb(221, 216, 216);
+        color: black;
+    }
+
+</style>
